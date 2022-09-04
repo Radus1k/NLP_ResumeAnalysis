@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load bootstrap5 %}
+{% get_media_prefix as MEDIA_PREFIX %}
+
+
+{% block results %}
+
+<div class="container" style="width:100%; max-width:3000px;">
+
+
+        <h1 style="text-align:center; padding-top:30px;"> Your original resume </h1>
+        <embed src="/media/resumes/{{request.session.resume_name}}" width=100%; height=50%; type="application/pdf">
+
+
+      <h1 style="text-align:center; padding-top:30px;"> The result of the resume </h1>
+
+      <embed src="/media/results/result_{{request.session.resume_name}}" width=100%; height=50%; type="application/pdf">
+
+ </div>
+
+{% endblock %}

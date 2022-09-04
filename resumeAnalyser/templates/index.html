@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load bootstrap5 %}
+
+{% block index %}
+<div class="container" style="width:100%; max-width:3000px;">
+    <div class="contentResume" style="text-align:center; font-size:30px;">
+        <h2><strong> <em> Resume Analyser </em></strong>  </h2>
+        <img src="{% static 'icons/rsume2.png' %}">
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+             {{ form }}
+            <div class="uploadCenter" style="margin:auto; width:30%;">
+                <input type="submit" class="bn5" value="OK">
+            </div>
+
+        </form>
+    </div>
+    <div>
+</div>
+</div>
+
+{% endblock %}
